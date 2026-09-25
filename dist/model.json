@@ -1,0 +1,21 @@
+{
+  "features": [
+    "edit_similarity",
+    "bigram_jaccard",
+    "token_jaccard",
+    "normalized_exact",
+    "first_token_equal",
+    "numeric_conflict"
+  ],
+  "weights": [
+    6.947478961275141,
+    6.60011402713321,
+    0.45858549891655465,
+    6.226400367330609,
+    -6.3214314258420155,
+    -5.417432525900551
+  ],
+  "bias": -7.032068518224054,
+  "threshold": 0.9900000000000004,
+  "version": "name-ranker-1"
+}

@@ -1,0 +1,18 @@
+{
+  "model": "Logistic regression over six lexical comparison features",
+  "training_pairs": 3840,
+  "validation_pairs": 960,
+  "split": "Disjoint generated base names, 80/20; name patterns repeat across partitions.",
+  "threshold": 0.9900000000000004,
+  "validation_precision": 1.0,
+  "validation_selected": 600,
+  "training_seed": 81,
+  "limitations": [
+    "Synthetic name-pair labels; validation is not real identity accuracy.",
+    "Ranks spelling variants; cannot resolve aliases, establish legal identity or certify ownership.",
+    "Scores are not calibrated real-world probabilities.",
+    "A high-scoring candidate still requires analyst review and source evidence.",
+    "No neural or LLM document extraction; supported extraction patterns are explicit and deterministic."
+  ],
+  "reproduce": "Run ml/train.py using scikit-learn and numpy."
+}
