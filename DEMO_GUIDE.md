@@ -34,3 +34,11 @@ The source may not contain the answer. A system that invents a direct owner from
 - **What is the biggest ML limitation?** Generated data and lexical features do not cover aliases, multilingual names or distinct companies with similar names. Validate on labeled business-resolution cases, compare exact/fuzzy baselines, and split by corporate family before expanding scope.
 - **What would you do next with a team?** Obtain licensed, representative documents and adjudicated entity pairs; measure retrieval recall and false links against baselines; evaluate extraction with source-span accuracy; add persistent case history and reviewer permissions. Add document intelligence only if it improves those measurements.
 
+
+## Answers to evaluation questions
+
+**What is recall at 0.99?** 1.0 on the synthetic validation set: all 600 positive pairs are selected, with zero false negatives. There are also 360 negative pairs and zero false positives. That is not an independently tested real-world result.
+
+**Why do patterns repeat?** Base names are held out, but the generator applies the same transformations across the partitions. The evaluation tests new instances of familiar patterns, not new error types.
+
+**Does the model outperform a simple rule?** No advantage is demonstrated: normalized edit similarity at 0.9 ties its perfect metrics on this set. A stronger benchmark is needed before justifying the learned model over that baseline.

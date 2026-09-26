@@ -43,6 +43,16 @@ python ml/train.py
 npm test
 ```
 
+## Evaluation audit
+
+The synthetic validation set contains 600 positive and 360 negative pairs. At the selected threshold, the model yields TP=600, FP=0, FN=0 and TN=360: precision, recall and F1 are all 1.0. Selection rate (600/960) is not recall (600/600).
+
+A simple normalized edit-similarity rule at 0.9 also achieves precision/recall/F1 of 1.0 on these pairs. Normalized exact matching reaches recall 0.8 with precision 1.0. This benchmark does **not** establish that learning improves on a fuzzy-string baseline. Shared easy generation patterns are the likely reason all errors disappear.
+
+Threshold selection maximizes the number of selected pairs under a validation precision constraint of 0.98 and breaks ties in favor of the larger threshold. The resulting 0.99 is not a business-validated risk setting. No independent test set or real legal-entity benchmark has been evaluated. The model card now includes the full confusion matrix, baseline metrics and a threshold sweep. Ownership extraction itself has only software tests, not an annotated document benchmark.
+
+Verify metric arithmetic with `python -m unittest discover -s ml -p 'test_*.py'` after installing the ML requirements.
+
 ## Evidence and scope
 
 Microsoft source: https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-ex21.htm (as of 2025-06-30).
